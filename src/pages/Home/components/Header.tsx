@@ -1,23 +1,34 @@
-import React from 'react';
+import React from "react";
+import { ChevronDown } from "lucide-react";
+import Logo from "@/assets/images/logo.svg?react";
 
 const Header: React.FC = () => {
-    return (
-        <header className="w-full h-20 lg:h-20 max-w-screen-lg mx-auto px-4 flex items-center justify-between">
-            <div className="flex items-center">
-                <img src="/path-to-logo.png" alt="Logo" className="h-10 w-10" />
-                <span className="ml-2 text-xl font-bold">Your Logo</span>
-            </div>
-            <nav className="hidden md:flex space-x-4">
-                <a href="#home" className="text-gray-700 hover:text-gray-900">Home</a>
-                <a href="#about" className="text-gray-700 hover:text-gray-900">About</a>
-                <a href="#services" className="text-gray-700 hover:text-gray-900">Services</a>
-                <a href="#contact" className="text-gray-700 hover:text-gray-900">Contact</a>
-            </nav>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                Sign Up
-            </button>
-        </header>
-    );
+  return (
+    <header className="w-full h-20 flex items-center justify-between">
+      <Logo />
+      <nav className="hidden md:flex space-x-12">
+        <a href="#Intro" className="text-[#303133]">
+          Intro
+        </a>
+        <a href="#Install" className="text-[#303133]">
+          Install
+        </a>
+        <a href="#$Metaso" className="text-[#303133]">
+          $Metaso
+        </a>
+        <a
+          href="#Explores"
+          className="text-[#303133] flex items-center gap-x-1"
+        >
+          <span>Explores</span>
+          <ChevronDown className="w-2.5" />
+        </a>
+      </nav>
+      <button className="bg-[#002E33] font-semibold text-white text-xs px-3.5 py-2.5 rounded-full focus:outline-none">
+        Go Experience
+      </button>
+    </header>
+  );
 };
 
 export default Header;
