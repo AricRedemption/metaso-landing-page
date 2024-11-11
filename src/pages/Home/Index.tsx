@@ -5,7 +5,7 @@ import Earth from "@/assets/images/earth.png";
 import Money from "@/assets/images/money.png";
 import Person from "@/assets/images/person.png";
 import Logo from "@/assets/images/logo.svg?react";
-import Intro from "@/assets/images/icons/intro.png";
+// import Intro from "@/assets/images/icons/intro.png";
 import Image1 from "@/assets/images/icons/image1.png";
 import Image2 from "@/assets/images/icons/image2.png";
 import Image3 from "@/assets/images/icons/image3.png";
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                 </p>
               </div>
             </div>
-            <img src={Intro} alt="Intro" className="w-1/2 mx-auto" />
+            {/* <img src={Intro} alt="Intro" className="w-1/2 mx-auto" /> */}
           </div>
         </div>
       </div>
