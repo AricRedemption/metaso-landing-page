@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./components/Header";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ArrowDown } from "lucide-react";
 import Earth from "@/assets/images/earth.png";
 import Money from "@/assets/images/money.png";
 import Person from "@/assets/images/person.png";
-import Logo from "@/assets/images/logo.svg?react";
 import Intro from "@/assets/images/icons/intro.png";
 import Image1 from "@/assets/images/icons/image1.png";
 import Image2 from "@/assets/images/icons/image2.png";
@@ -12,10 +12,6 @@ import Image3 from "@/assets/images/icons/image3.png";
 import Icon1 from "@/assets/images/icons/icon1.svg?react";
 import Icon2 from "@/assets/images/icons/icon2.svg?react";
 import Icon3 from "@/assets/images/icons/icon3.svg?react";
-import BookIcon from "@/assets/images/media/book.svg?react";
-import XIcon from "@/assets/images/media/x.svg?react";
-import MeatIDIcon from "@/assets/images/media/metaid.svg?react";
-import TelegramIcon from "@/assets/images/media/telegram.svg?react";
 
 const Home: React.FC = () => {
   return (
@@ -239,28 +235,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-[#79D0FE] md:pt-[55px]">
-        <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 flex flex-col md:flex-row md:justify-between md:items-center min-h-40 items-center gap-4 md:gap-0">
-          <div className="flex flex-col gap-y-4">
-            <Logo />
-            <p className="text-black">Building centralization social network</p>
-          </div>
-          <div className="flex items-center gap-x-4">
-            <div className="size-10 bg-[#002E33]/20 flex items-center justify-center rounded-full">
-              <TelegramIcon />
-            </div>
-            <div className="size-10 bg-[#002E33]/20 flex items-center justify-center rounded-full">
-              <XIcon />
-            </div>
-            <div className="size-10 bg-[#002E33]/20 flex items-center justify-center rounded-full">
-              <MeatIDIcon />
-            </div>
-            <div className="size-10 bg-[#002E33]/20 flex items-center justify-center rounded-full">
-              <BookIcon />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 };
