@@ -37,7 +37,11 @@ const InstallPage: React.FC = () => {
           <p className="text-[#001F23]/80 text-base sm:text-lg mb-12 text-center">
             PS: If you need to view the tutorial on how to purchase a server,
             please refer to the{" "}
-            <a href="#tutorial" className="text-blue-600 underline">
+            <a
+              href="https://github.com/metaid-developers/metaso-deploy?tab=readme-ov-file#how-to-purchase-a-server"
+              target="_blank"
+              className="text-blue-600 underline"
+            >
               Tutorial
             </a>
           </p>

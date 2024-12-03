@@ -29,9 +29,14 @@ const Header: React.FC = () => {
           <ChevronDown className="w-2.5" />
         </Link>
       </nav>
-      <button className="bg-[#002E33] font-semibold text-white text-xs px-3.5 py-2.5 rounded-full focus:outline-none hidden md:block">
+      <a
+        href="https://www.show.now/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-[#002E33] font-semibold text-white text-xs px-3.5 py-2.5 rounded-full focus:outline-none hidden md:block hover:text-white"
+      >
         Go Experience
-      </button>
+      </a>
       <button
         className="md:hidden text-[#303133]"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -49,7 +54,10 @@ const Header: React.FC = () => {
           <Link to="#$Metaso" className="text-[#303133]">
             $Metaso
           </Link>
-          <Link to="/explores" className="text-[#303133] flex items-center gap-x-1">
+          <Link
+            to="/explores"
+            className="text-[#303133] flex items-center gap-x-1"
+          >
             <span>Explores</span>
             <ChevronDown className="w-2.5" />
           </Link>
