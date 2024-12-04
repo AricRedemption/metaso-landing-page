@@ -14,6 +14,7 @@ import Icon2 from "@/assets/images/icons/icon2.svg?react";
 import Icon3 from "@/assets/images/icons/icon3.svg?react";
 import { useQueryCountInfo } from "@/queries";
 import AnimatedNumber from "@/components/AnimatedNumber";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   const { data } = useQueryCountInfo();
@@ -34,10 +35,13 @@ const Home: React.FC = () => {
             Network on Bitcoin
           </h1>
           <div className="flex items-center gap-x-[28.5px] mt-[30px] text-xs font-semibold">
-            <button className="bg-[#002E33] text-white rounded-full px-[34px] py-2.5 flex items-center gap-x-1 h-9 focus:outline-none">
+            <Link
+              to="/install"
+              className="bg-[#002E33] text-white rounded-full px-[34px] py-2.5 flex items-center gap-x-1 h-9 focus:outline-none"
+            >
               <span>Install</span>
               <ArrowDown className="w-3.5" />
-            </button>
+            </Link>
             <a
               className="bg-white text-[#002E33] rounded-full px-[34px] py-2.5 h-9 focus:outline-none"
               href="https://www.show.now/"
@@ -57,7 +61,14 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-3 md:col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={0} />
+                {data?.Count.node ? (
+                  <AnimatedNumber value={data?.Count.node || 0} />
+                ) : (
+                  <h1 className="text-2xl sm:text-3xl xl:text-5xl font-bold text-[#002E33]">
+                    --
+                  </h1>
+                )}
+
                 <h6 className="font-medium text-[#002E33]/[0.77]">Nodes</h6>
               </div>
               <img src={Earth} alt="Person" className="size-[80px]" />
@@ -87,10 +98,9 @@ const Home: React.FC = () => {
           </h1>
           <p className="text-lg text-[#001F23]/80 mt-6 font-normal text-center">
             MetaSo is a decentralized social network software package based on
-            the MetaID protocol. Developers and users can participate in
-            building this global Bitcoin-based decentralized social network by
-            installing and deploying MetaSo nodes. They can also mine $METASO
-            tokens by running MetaSo nodes.
+            MetaID protocol. Developers and users can participate in building a
+            global Bitcoin-based decentralized social network by installing and
+            deploying MetaSo nodes.
           </p>
           <div className="flex flex-col md:flex-row md:justify-between mt-10 lg:mt-[70px]">
             <div className="flex flex-col items-center gap-[60px]">
@@ -100,10 +110,12 @@ const Home: React.FC = () => {
                   Total Decentralizd
                 </h3>
                 <p className="text-sm font-medium mt-3 text-[#002E33]/60">
-                  Experience true freedom with our totally decentralized
-                  platform. Metaso empowers users to take control of their data
-                  and transactions, ensuring maximum security and privacy. Join
-                  the future of the decentralized world today.
+                  MetaSo data is entirely sourced from on-chain data of Bitcoin
+                  and its sidechains, with each node locally storing and
+                  indexing the relevant data. MetaSo nodes are interconnected
+                  via P2P, without relying on any third parties, making it the
+                  first truly decentralized social media network based on
+                  Bitcoin.
                 </p>
               </div>
               <div className="flex flex-col">
@@ -112,23 +124,28 @@ const Home: React.FC = () => {
                   Cross-Chain
                 </h3>
                 <p className="text-sm font-medium mt-3 text-[#002E33]/60">
-                  Our innovative platform enables effortless integration and
-                  interoperability between multiple blockchains, unlocking
-                  endless possibilities and opportunities for users.
+                  MetaSo is based on the MetaID protocol and fully supports the
+                  philosophy of MetaBitcoin Network, meaning it can support
+                  Bitcoin and its many sidechains. Users can choose to use
+                  Bitcoin assets within the MetaSo social media platform and
+                  select suitable sidechains for data on-chain. This approach
+                  addresses the issues of high transaction fees and network
+                  congestion on Bitcoin.
                 </p>
               </div>
               <div className="flex flex-col">
                 <Icon3 />
                 <h3 className="text-xl font-semibold mt-[27px] text-[#002E33]">
-                  Realtime Interoperable
+                  Allowing Deep Customization
                 </h3>
                 <p className="text-sm font-medium mt-3 text-[#002E33]/60">
-                  Experience real-time interoperability with Metaso. Our
-                  cutting-edge platform allows for instantaneous interactions
-                  and transactions across different networks, providing
-                  unparalleled convenience and efficiency. With Metaso, you can
-                  harness the power of real-time interoperability for a smooth,
-                  interconnected blockchain experience.
+                  Each MetaSo node can modify its style through backend
+                  configuration, enabling every MetaSo node to have a unique UI
+                  interface. Each node can also customize its own pricing
+                  standards, blacklists, filtering mechanisms, and more.
+                  Additionally, experienced developers are allowed to perform
+                  deeper customizations and develop more features for social
+                  applications based on the MetaSo node.
                 </p>
               </div>
             </div>

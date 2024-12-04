@@ -17,20 +17,20 @@ const Header: React.FC = () => {
     <header className="w-full h-20 flex items-center justify-between mb-3">
       <Logo />
       <nav className="hidden md:flex space-x-12">
+        <Link to="/" className={getLinkClass("/")}>
+          Home
+        </Link>
         <Link to="/intro" className={getLinkClass("/intro")}>
           Intro
         </Link>
         <Link to="/install" className={getLinkClass("/install")}>
           Install
         </Link>
-        <Link to="/" className={getLinkClass("/")}>
-          $Metaso
-        </Link>
         <Link
           to="/explores"
           className={`${getLinkClass("/explores")} flex items-center gap-x-1`}
         >
-          <span>Explores</span>
+          <span>Explore</span>
           <ChevronDown className="w-2.5" />
         </Link>
       </nav>

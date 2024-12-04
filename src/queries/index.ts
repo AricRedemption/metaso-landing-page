@@ -8,6 +8,7 @@ export function getCountInfo() {
       Pin: number;
       metaId: number;
       app: number;
+      node: number;
     };
   }>("/api/pin/list").get({ page: 1, size: 1 });
 }

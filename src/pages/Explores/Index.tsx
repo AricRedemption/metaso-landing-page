@@ -21,13 +21,13 @@ const Home: React.FC = () => {
         <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 flex flex-col min-h-[800px] items-center">
           <Header />
           <h1 className="font-bold text-center text-[#001F23] xl:mt-[70px] text-xl sm:text-3xl md:text-4xl xl:text-6xl">
-            MetaID Overview
+            MetaSO Overview
           </h1>
           <div className="mt-4 sm:mt-8 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full py-8">
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  102234
+                  --
                 </h1>
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   Total number of
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  12988
+                  --
                 </h1>
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   MetaSo instances
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  1234456
+                  --
                 </h1>
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   Transactions
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  102234
+                  --
                 </h1>
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   Number of ID coins
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  0.03
+                  --
                 </h1>
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   $MetaSo price
@@ -102,7 +102,7 @@ const Home: React.FC = () => {
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  203334
+                  --
                 </h1>
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   $MetaSo Market Cap
