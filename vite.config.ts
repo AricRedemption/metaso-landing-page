@@ -18,4 +18,13 @@ export default defineConfig({
       plugins: [tailwindcss, autoprefixer],
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://man.metaid.io/api",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });

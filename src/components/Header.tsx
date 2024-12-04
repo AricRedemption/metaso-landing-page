@@ -1,29 +1,34 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import Logo from "@/assets/images/logo.svg?react";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const getLinkClass = (path: string) => {
+    return location.pathname === path
+      ? "text-[#303133] underline underline-offset-[12px] decoration-[#002E33] decoration-2"
+      : "text-[#303133]";
+  };
 
   return (
-    <header className="w-full h-20 flex items-center justify-between">
-      <Link to="/">
-        <Logo />
-      </Link>
+    <header className="w-full h-20 flex items-center justify-between mb-3">
+      <Logo />
       <nav className="hidden md:flex space-x-12">
-        <Link to="/intro" className="text-[#303133]">
+        <Link to="/intro" className={getLinkClass("/intro")}>
           Intro
         </Link>
-        <Link to="/install" className="text-[#303133]">
+        <Link to="/install" className={getLinkClass("/install")}>
           Install
         </Link>
-        <Link to="#$Metaso" className="text-[#303133]">
+        <Link to="/" className={getLinkClass("/")}>
           $Metaso
         </Link>
         <Link
           to="/explores"
-          className="text-[#303133] flex items-center gap-x-1"
+          className={`${getLinkClass("/explores")} flex items-center gap-x-1`}
         >
           <span>Explores</span>
           <ChevronDown className="w-2.5" />
@@ -45,18 +50,18 @@ const Header: React.FC = () => {
       </button>
       {isMobileMenuOpen && (
         <nav className="md:hidden absolute top-20 left-0 w-full bg-white flex flex-col items-center space-y-4 py-4">
-          <Link to="/intro" className="text-[#303133]">
+          <Link to="/intro" className={getLinkClass("/intro")}>
             Intro
           </Link>
-          <Link to="/install" className="text-[#303133]">
+          <Link to="/install" className={getLinkClass("/install")}>
             Install
           </Link>
-          <Link to="#$Metaso" className="text-[#303133]">
+          <Link to="/" className={getLinkClass("/")}>
             $Metaso
           </Link>
           <Link
             to="/explores"
-            className="text-[#303133] flex items-center gap-x-1"
+            className={`${getLinkClass("/explores")} flex items-center gap-x-1`}
           >
             <span>Explores</span>
             <ChevronDown className="w-2.5" />

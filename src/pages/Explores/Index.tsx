@@ -24,7 +24,7 @@ const Home: React.FC = () => {
             MetaID Overview
           </h1>
           <div className="mt-4 sm:mt-8 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full py-8">
-            <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-1">
+            <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
                   102234
@@ -33,9 +33,13 @@ const Home: React.FC = () => {
                   Total number of
                 </h6>
               </div>
-              <img src={Image1} alt="Person" className="w-[60px] sm:w-[80px] md:w-[100px] xl:w-[119px]" />
+              <img
+                src={Image1}
+                alt="Person"
+                className="size-[80px] md:size-[100px]"
+              />
             </div>
-            <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-1">
+            <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
                   12988
@@ -44,9 +48,13 @@ const Home: React.FC = () => {
                   MetaSo instances
                 </h6>
               </div>
-              <img src={Image2} alt="Person" className="w-[60px] sm:w-[80px] md:w-[100px] xl:w-[100px]" />
+              <img
+                src={Image2}
+                alt="Person"
+                className="size-[63px] md:size-[90px]"
+              />
             </div>
-            <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-1">
+            <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
                   1234456
@@ -55,9 +63,13 @@ const Home: React.FC = () => {
                   Transactions
                 </h6>
               </div>
-              <img src={Image3} alt="Person" className="w-[60px] sm:w-[80px] md:w-[100px] xl:w-[111px]" />
+              <img
+                src={Image3}
+                alt="Person"
+                className="size-[80px] md:size-[90px]"
+              />
             </div>
-            <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-1">
+            <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
                   102234
@@ -66,9 +78,13 @@ const Home: React.FC = () => {
                   Number of ID coins
                 </h6>
               </div>
-              <img src={Image4} alt="Person" className="w-[60px] sm:w-[80px] md:w-[100px] xl:w-[117px]" />
+              <img
+                src={Image4}
+                alt="Person"
+                className="size-[80px] md:size-[100px]"
+              />
             </div>
-            <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-1">
+            <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
                   0.03
@@ -77,9 +93,13 @@ const Home: React.FC = () => {
                   $MetaSo price
                 </h6>
               </div>
-              <img src={Image5} alt="Person" className="w-[60px] sm:w-[80px] md:w-[100px] xl:w-[125px]" />
+              <img
+                src={Image5}
+                alt="Person"
+                className="size-[80px] md:size-[100px]"
+              />
             </div>
-            <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-1">
+            <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
                 <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
                   203334
@@ -88,7 +108,11 @@ const Home: React.FC = () => {
                   $MetaSo Market Cap
                 </h6>
               </div>
-              <img src={Image6} alt="Person" className="w-[60px] sm:w-[80px] md:w-[100px] xl:w-[106px]" />
+              <img
+                src={Image6}
+                alt="Person"
+                className="size-[70px] md:size-[90px]"
+              />
             </div>
           </div>
         </div>
@@ -96,7 +120,7 @@ const Home: React.FC = () => {
       <div className="w-full bg-[#78DAE4]">
         <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 py-24">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-[#001F23] mb-16">
-            Competitors
+            Latest MetaBlock Data
           </h2>
           <div className="w-full max-w-[1200px] mx-auto">
             <img

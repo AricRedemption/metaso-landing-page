@@ -12,8 +12,11 @@ import Image3 from "@/assets/images/icons/image3.png";
 import Icon1 from "@/assets/images/icons/icon1.svg?react";
 import Icon2 from "@/assets/images/icons/icon2.svg?react";
 import Icon3 from "@/assets/images/icons/icon3.svg?react";
+import { useQueryCountInfo } from "@/queries";
+import AnimatedNumber from "@/components/AnimatedNumber";
 
 const Home: React.FC = () => {
+  const { data } = useQueryCountInfo();
   return (
     <>
       <div
@@ -35,39 +38,38 @@ const Home: React.FC = () => {
               <span>Install</span>
               <ArrowDown className="w-3.5" />
             </button>
-            <button className="bg-white text-[#002E33] rounded-full px-[34px] py-2.5 h-9 focus:outline-none">
+            <a
+              className="bg-white text-[#002E33] rounded-full px-[34px] py-2.5 h-9 focus:outline-none"
+              href="https://www.show.now/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Go Experience
-            </button>
+            </a>
           </div>
           <div className="mt-4 sm:mt-8 lg:mt-16 grid grid-cols-3 gap-5 w-full py-8">
             <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-3 md:col-span-1">
               <div className="space-y-1">
-                <h1 className="text-2xl sm:text-3xl xl:text-5xl font-bold text-[#002E33]">
-                  102234
-                </h1>
+                <AnimatedNumber value={data?.Count.metaId || 0} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">Users</h6>
               </div>
               <img src={Person} alt="Person" className="size-20" />
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-3 md:col-span-1">
               <div className="space-y-1">
-                <h1 className="text-2xl sm:text-3xl xl:text-5xl font-bold text-[#002E33]">
-                  12
-                </h1>
+                <AnimatedNumber value={0} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">Nodes</h6>
               </div>
-              <img src={Earth} alt="Person" className="size-[119px]" />
+              <img src={Earth} alt="Person" className="size-[80px]" />
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-3 md:col-span-1">
               <div className="space-y-1">
-                <h1 className="text-2xl sm:text-3xl xl:text-5xl font-bold text-[#002E33]">
-                  1234456
-                </h1>
+                <AnimatedNumber value={data?.Count.Pin || 0} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   Transactions
                 </h6>
               </div>
-              <img src={Money} alt="Person" className="size-[93px]" />
+              <img src={Money} alt="Person" className="size-[80px]" />
             </div>
           </div>
         </div>
@@ -84,13 +86,11 @@ const Home: React.FC = () => {
             What is MetaSo？
           </h1>
           <p className="text-lg text-[#001F23]/80 mt-6 font-normal text-center">
-            MetaSo is open-source, social networking, Web3 middleware based on
-            MetaID protocol. Developers can deploy new Web3 social applications
-            in 20 minutes by simply editing the configuration files.MetaSo was
-            launched and operated by DAO and incentivized with tokenomics.Data
-            in Different MetaSo applications are interconnected and
-            interoperable. MetaSo will bust data silos and build an ultimate
-            decentralized Web3 social platform.
+            MetaSo is a decentralized social network software package based on
+            the MetaID protocol. Developers and users can participate in
+            building this global Bitcoin-based decentralized social network by
+            installing and deploying MetaSo nodes. They can also mine $METASO
+            tokens by running MetaSo nodes.
           </p>
           <div className="flex flex-col md:flex-row md:justify-between mt-10 lg:mt-[70px]">
             <div className="flex flex-col items-center gap-[60px]">

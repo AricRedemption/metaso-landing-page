@@ -8,7 +8,6 @@ import Network from "@/assets/intro/Network.png";
 import { Smile, Share2, Shield, Ban } from "lucide-react";
 import GlobeNetwork from "@/assets/intro/globe-network.png";
 import CompetitorsTable from "@/assets/intro/competitors-table.png";
-import MetaSoNetworkDiagram from "@/assets/intro/metaso-network-diagram.png";
 
 const IntroPage: React.FC = () => {
   return (
@@ -36,7 +35,7 @@ const IntroPage: React.FC = () => {
           </p>
           <div className="mt-16 w-full max-w-[1200px] mx-auto">
             <img
-              src={MetaSoNetworkDiagram}
+              src="/metaso-network-diagram.png"
               alt="MetaSo Network Diagram"
               className="w-full h-auto max-w-[600px] mx-auto mt-[60px] mb-[80px]"
             />
