@@ -118,7 +118,7 @@ const InstallPage: React.FC = () => {
           <div className="max-w-3xl mx-auto bg-white/80 rounded-xl p-4 flex items-center justify-between">
             <code className="text-sm text-[#001F23] block pr-10">
               wget -qO-
-              https://github.com/metaid-developers/metaso/releases/download/v0.1/installmetaso_boot.sh{" "}
+              https://github.com/metaid-developers/metaso/releases/download/v0.1/install_metaso_boot.sh{" "}
               | sudo bash
             </code>
             <button
