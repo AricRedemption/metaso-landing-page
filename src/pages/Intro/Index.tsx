@@ -27,7 +27,7 @@ const IntroPage: React.FC = () => {
           <h1 className="font-bold text-center text-[#001F23] xl:mt-[70px] text-xl sm:text-3xl md:text-5xl xl:text-6xl">
             {t('intro.hero.title')}
           </h1>
-          <p className="text-lg text-[#001F23]/80 mt-6 font-normal text-center max-w-[800px]">
+          <p className="text-lg text-[#001F23]/80 mt-6 font-normal text-center max-w-[800px] text-pretty">
             {t('intro.hero.description')}
           </p>
           <div className="mt-16 w-full max-w-[1200px] mx-auto">

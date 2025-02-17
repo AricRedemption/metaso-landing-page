@@ -37,7 +37,7 @@ const InstallPage: React.FC = () => {
           <p className="text-[#001F23]/80 text-base sm:text-lg mb-12 text-center">
             {t('install.hero.tutorial')}{" "}
             <a
-              href="https://github.com/metaid-developers/metaso-deploy?tab=readme-ov-file#how-to-purchase-a-server"
+              href="https://github.com/MetaSo-Labs/metaso-deploy?tab=readme-ov-file#how-to-purchase-a-server"
               target="_blank"
               className="text-blue-600 underline"
             >
