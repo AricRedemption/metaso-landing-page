@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Globe from "@/assets/intro/Globe.png";
@@ -10,6 +11,8 @@ import GlobeNetwork from "@/assets/intro/globe-network.png";
 import CompetitorsTable from "@/assets/intro/competitors-table.png";
 
 const IntroPage: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* What is MetaSo? Section */}
@@ -22,16 +25,10 @@ const IntroPage: React.FC = () => {
         <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 flex flex-col min-h-[800px] items-center">
           <Header />
           <h1 className="font-bold text-center text-[#001F23] xl:mt-[70px] text-xl sm:text-3xl md:text-5xl xl:text-6xl">
-            What is MetaSo?
+            {t('intro.hero.title')}
           </h1>
           <p className="text-lg text-[#001F23]/80 mt-6 font-normal text-center max-w-[800px]">
-            MetaSo is an open-source, social networking, Web3 middleware based
-            on MetaID protocol. Developers can deploy new Web3 social
-            applications in 20 minutes by simply editing the configuration
-            files. MetaSo was launched and operated by DAO and incentivized with
-            tokenomics. Data in Different MetaSo applications are interconnected
-            and interoperable. MetaSo will bust data silos and build an ultimate
-            decentralized Web3 social platform.
+            {t('intro.hero.description')}
           </p>
           <div className="mt-16 w-full max-w-[1200px] mx-auto">
             <img
@@ -52,56 +49,46 @@ const IntroPage: React.FC = () => {
       >
         <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 py-24">
           <h2 className="text-4xl font-bold text-center text-[#001F23] mb-8">
-            Why do you need Metaso?
+            {t('intro.why.title')}
           </h2>
           <p className="text-lg text-center text-[#001F23]/80 mb-16">
-            Metaso is a platform designed to provide safer, more convenient and
-            more open social nodes
+            {t('intro.why.subtitle')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-[#A7F0FF] rounded-2xl p-8">
               <Smile className="w-8 h-8 mb-4 text-[#131A29]" />
               <h3 className="text-xl font-semibold text-[#002E33] mb-4">
-                One account / mnemonic phrase to use all social apps
+                {t('intro.why.features.account.title')}
               </h3>
               <p className="text-sm text-[#002E33]/70">
-                Metaso achieves account portability through the MetaID protocol.
-                Users can use an account or mnemonic phrase to log in to all
-                social applications that support Metaso.
+                {t('intro.why.features.account.description')}
               </p>
             </div>
             <div className="bg-[#A7F0FF] rounded-2xl p-8">
               <Share2 className="w-8 h-8 mb-4 text-[#131A29]" />
               <h3 className="text-xl font-semibold text-[#002E33] mb-4">
-                Data interconnection between all social platforms
+                {t('intro.why.features.interconnection.title')}
               </h3>
               <p className="text-sm text-[#002E33]/70">
-                This means that users' data on different social platforms can be
-                circulated and shared with each other, improving the
-                availability and connectivity of data.
+                {t('intro.why.features.interconnection.description')}
               </p>
             </div>
             <div className="bg-[#A7F0FF] rounded-2xl p-8">
               <Shield className="w-8 h-8 mb-4 text-[#131A29]" />
               <h3 className="text-xl font-semibold text-[#002E33] mb-4">
-                Users don't have to worry about being deleted or tampered with
-                by social platforms
+                {t('intro.why.features.security.title')}
               </h3>
               <p className="text-sm text-[#002E33]/70">
-                Metaso ensures the decentralization and non-tampering of data by
-                uploading all data to the chain, and the security of user data
-                is protected.
+                {t('intro.why.features.security.description')}
               </p>
             </div>
             <div className="bg-[#A7F0FF] rounded-2xl p-8">
               <Ban className="w-8 h-8 mb-4 text-[#131A29]" />
               <h3 className="text-xl font-semibold text-[#002E33] mb-4">
-                Users don't have to worry about their accounts being banned by
-                social platforms
+                {t('intro.why.features.freedom.title')}
               </h3>
               <p className="text-sm text-[#002E33]/70">
-                Metaso provides independence between accounts and social
-                platform accounts.
+                {t('intro.why.features.freedom.description')}
               </p>
             </div>
           </div>
@@ -117,18 +104,16 @@ const IntroPage: React.FC = () => {
       >
         <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 py-24">
           <h2 className="text-4xl font-bold text-center text-[#001F23] mb-16">
-            Features
+            {t('intro.features.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[#A7F0FF] rounded-2xl p-8 flex items-center min-h-[200px]">
               <div className="max-w-[70%]">
                 <h3 className="text-xl font-semibold text-[#002E33] mb-4">
-                  Completely based on Bitcoin
+                  {t('intro.features.bitcoin.title')}
                 </h3>
                 <p className="text-sm text-[#002E33]/70">
-                  Completely based on Bitcoin and Bitcoin-related ecology, data
-                  security cannot be tampered with and belongs to the user
-                  himself
+                  {t('intro.features.bitcoin.description')}
                 </p>
               </div>
               <div className="flex-shrink-0 ml-auto">
@@ -139,12 +124,10 @@ const IntroPage: React.FC = () => {
             <div className="bg-[#A7F0FF] rounded-2xl p-8 flex items-center min-h-[200px]">
               <div className="max-w-[70%]">
                 <h3 className="text-xl font-semibold text-[#002E33] mb-4">
-                  Built based on MetaID protocol
+                  {t('intro.features.metaid.title')}
                 </h3>
                 <p className="text-sm text-[#002E33]/70">
-                  Built based on the MetaID protocol, one wallet uses all MetaSo
-                  social applications, and data interconnection between
-                  different applications
+                  {t('intro.features.metaid.description')}
                 </p>
               </div>
               <div className="flex-shrink-0 ml-auto">
@@ -155,31 +138,28 @@ const IntroPage: React.FC = () => {
             <div className="bg-[#A7F0FF] rounded-2xl p-8 flex items-center min-h-[200px]">
               <div className="max-w-[70%]">
                 <h3 className="text-xl font-semibold text-[#002E33] mb-4">
-                  Highly integrated software
+                  {t('intro.features.integrated.title')}
                 </h3>
                 <p className="text-sm text-[#002E33]/70">
-                  The MetaSo software package is highly integrated and ordinary
-                  users can install it and become a node in the network within
-                  30 minutes.
+                  {t('intro.features.integrated.description')}
                 </p>
               </div>
               <div className="flex-shrink-0 ml-auto">
-                <img src={Globe} alt="Wallet" className="size-[120px]" />
+                <img src={Globe} alt="Globe" className="size-[120px]" />
               </div>
             </div>
 
             <div className="bg-[#A7F0FF] rounded-2xl p-8 flex items-center min-h-[200px]">
               <div className="max-w-[70%]">
                 <h3 className="text-xl font-semibold text-[#002E33] mb-4">
-                  Receive $MetaSo incentives
+                  {t('intro.features.incentives.title')}
                 </h3>
                 <p className="text-sm text-[#002E33]/70">
-                  By operating MetaSo, you can receive $MetaSo incentives and
-                  contribute to the global decentralized network.
+                  {t('intro.features.incentives.description')}
                 </p>
               </div>
               <div className="flex-shrink-0 ml-auto">
-                <img src={Network} alt="Wallet" className="size-[120px]" />
+                <img src={Network} alt="Network" className="size-[120px]" />
               </div>
             </div>
           </div>
@@ -195,14 +175,10 @@ const IntroPage: React.FC = () => {
       >
         <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 pt-24">
           <h2 className="text-4xl font-bold text-center text-white mb-8">
-            Decentralized Data Storage
+            {t('intro.storage.title')}
           </h2>
           <p className="text-lg text-center text-white/80 mb-16 max-w-[800px] mx-auto">
-            Decentralized storage of data is one of the most important features
-            of MetaSo. Thanks to the mechanisms of Bitcoin and Metaso, we can
-            obtain a social network that belongs to humans around the world,
-            where data is completely distributed and stored. This network is not
-            controlled by any party, and the data belongs to the user himself.
+            {t('intro.storage.description')}
           </p>
           <div className="w-full max-w-[1200px] mx-auto">
             <img
@@ -218,7 +194,7 @@ const IntroPage: React.FC = () => {
       <div className="w-full bg-[#8CDDFF]">
         <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 py-24">
           <h2 className="text-4xl font-bold text-center text-[#001F23] mb-16">
-            Competitors
+            {t('intro.competitors.title')}
           </h2>
           <div className="w-full max-w-[1200px] mx-auto">
             <img

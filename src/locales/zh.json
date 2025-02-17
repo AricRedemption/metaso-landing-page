@@ -1,0 +1,204 @@
+{
+  "header": {
+    "home": "首页",
+    "intro": "介绍",
+    "install": "安装",
+    "explore": "探索",
+    "experience": "立即体验",
+    "menu": "菜单",
+    "close": "关闭"
+  },
+  "footer": {
+    "slogan": "构建去中心化社交网络"
+  },
+  "home": {
+    "hero": {
+      "title": "在比特币上建立一个可扩展的\n去中心化社交媒体网络",
+      "install": "安装",
+      "experience": "立即体验"
+    },
+    "stats": {
+      "users": "用户",
+      "nodes": "节点",
+      "transactions": "交易"
+    },
+    "intro": {
+      "title": "MetaSo是什么？",
+      "description": "MetaSo是一个基于MetaID协议的去中心化社交网络软件包。开发者和用户可以通过安装和部署MetaSo节点来参与构建基于比特币的全球去中心化社交网络。",
+      "features": {
+        "decentralized": {
+          "title": "完全去中心化",
+          "description": "MetaSo数据完全来源于比特币及其侧链的链上数据，每个节点本地存储和索引相关数据。MetaSo节点通过P2P互联，不依赖任何第三方，是第一个真正基于比特币的去中心化社交媒体网络。"
+        },
+        "crosschain": {
+          "title": "跨链",
+          "description": "MetaSo基于MetaID协议，完全支持MetaBitcoin Network的理念，这意味着它可以支持比特币及其众多侧链。用户可以选择在MetaSo社交媒体平台内使用比特币资产，并选择合适的侧链进行数据上链。这种方式解决了比特币高手续费和网络拥堵的问题。"
+        },
+        "customization": {
+          "title": "允许深度定制",
+          "description": "每个MetaSo节点都可以通过后台配置修改其样式，使每个MetaSo节点都能拥有独特的UI界面。每个节点还可以自定义其定价标准、黑名单、过滤机制等。此外，有经验的开发者可以进行更深层次的定制，基于MetaSo节点开发更多社交应用功能。"
+        }
+      }
+    },
+    "steps": {
+      "title": "成为全球去中心化社交网络的一部分",
+      "step1": "下载并安装 MetaSo 节点",
+      "step2": "配置你的社交媒体应用",
+      "step3": "推广并获得 $METASO"
+    },
+    "faq": {
+      "title": "关于 MetaSo 的常见问题解答",
+      "q1": {
+        "question": "MetaSo节点可以用于哪些类型的应用？",
+        "answer": "除了web3社交应用外，MetaSo还可以创建笔记、网络书籍、游戏和音乐等多种类型的应用。"
+      }
+    }
+  },
+  "intro": {
+    "hero": {
+      "title": "MetaSo是什么？",
+      "description": "MetaSo是一个基于MetaID协议的开源社交网络Web3中间件。开发者只需编辑配置文件，即可在20分钟内部署新的Web3社交应用。MetaSo由DAO启动和运营，并通过代币经济激励。不同MetaSo应用程序中的数据是互联互通的。MetaSo将打破数据孤岛，构建终极去中心化Web3社交平台。"
+    },
+    "why": {
+      "title": "为什么需要Metaso?",
+      "subtitle": "Metaso是一个为提供更安全、更便捷、更开放的社交节点而设计的平台",
+      "features": {
+        "account": {
+          "title": "一个账户/助记词使用所有社交应用",
+          "description": "Metaso通过MetaID协议实现账户可移植性。用户可以使用一个账户或助记词登录所有支持Metaso的社交应用。"
+        },
+        "interconnection": {
+          "title": "所有社交平台数据互联互通",
+          "description": "这意味着用户在不同社交平台上的数据可以相互流通和共享，提高数据的可用性和连通性。"
+        },
+        "security": {
+          "title": "用户无需担心被社交平台删除或篡改",
+          "description": "Metaso通过将所有数据上链确保数据的去中心化和不可篡改性，用户数据的安全得到保护。"
+        },
+        "freedom": {
+          "title": "用户无需担心账号被社交平台封禁",
+          "description": "Metaso提供账户与社交平台账户之间的独立性。"
+        }
+      }
+    },
+    "features": {
+      "title": "特点",
+      "bitcoin": {
+        "title": "完全基于比特币",
+        "description": "完全基于比特币和比特币相关生态，数据安全不可篡改，属于用户自己"
+      },
+      "metaid": {
+        "title": "基于MetaID协议构建",
+        "description": "基于MetaID协议构建，一个钱包使用所有MetaSo社交应用，不同应用之间数据互联互通"
+      },
+      "integrated": {
+        "title": "高度集成的软件",
+        "description": "MetaSo软件包高度集成，普通用户30分钟内即可安装并成为网络中的节点"
+      },
+      "incentives": {
+        "title": "获得$MetaSo激励",
+        "description": "通过运营MetaSo，您可以获得$MetaSo激励，为全球去中心化网络做出贡献"
+      }
+    },
+    "storage": {
+      "title": "去中心化数据存储",
+      "description": "去中心化数据存储是MetaSo最重要的特征之一。得益于比特币和Metaso的机制，我们可以获得一个属于全人类的社交网络，数据完全分布式存储。这个网络不受任何方控制，数据属于用户自己。"
+    },
+    "competitors": {
+      "title": "竞品分析"
+    }
+  },
+  "install": {
+    "hero": {
+      "title": "安装指南",
+      "description": "为了让MetaSo能够让所有人使用，所有程序都打包成一个安装包，包括一键升级安装，确保网络中所有MetaSo节点都能保持同步。",
+      "tutorial": "PS：如果需要查看购买服务器的教程，请参考",
+      "tutorial_link": "教程"
+    },
+    "steps": {
+      "server": {
+        "title": "服务器安装程序",
+        "description": "在您的服务器上执行以下命令以启动安装程序"
+      },
+      "access": {
+        "title": "访问安装程序",
+        "description": "访问安装程序页面 http://[服务器IP]:7171（需要开放7171端口）"
+      },
+      "test": {
+        "title": "测试 MetaSo 服务",
+        "description": "测试 MetaSo 服务 http://[服务器IP]:3000（需要开放3000端口）"
+      },
+      "admin": {
+        "title": "访问管理设置",
+        "description": "访问管理设置 http://[服务器IP]:3000/dashboard/Login"
+      },
+      "api": {
+        "title": "API文档",
+        "description": "API文档可在 http://[服务器IP]:7172 查看"
+      }
+    },
+    "sections": {
+      "server": {
+        "title": "服务器安装程序",
+        "description": "在您的服务器上执行以下命令以启动安装程序："
+      },
+      "access": {
+        "title": "访问安装程序",
+        "description": "访问安装程序页面 http://[服务器IP]:7171（需要开放7171端口）"
+      },
+      "test": {
+        "title": "测试 MetaSo 服务",
+        "description": "测试 MetaSo 服务 http://[服务器IP]:3000（需要开放3000端口）"
+      },
+      "admin": {
+        "title": "访问管理设置",
+        "description": "访问管理设置 http://[服务器IP]:3000/dashboard/Login"
+      }
+    },
+    "buttons": {
+      "upgrade": "升级",
+      "copy": "复制"
+    }
+  },
+  "explores": {
+    "hero": {
+      "title": "MetaSo 总览"
+    },
+    "stats": {
+      "total_users": {
+        "title": "总用户数",
+        "value": "--"
+      },
+      "total_instances": {
+        "title": "总 MetaSo 实例数",
+        "value": "--"
+      },
+      "total_transactions": {
+        "title": "总 TX 数",
+        "value": "--"
+      },
+      "id_coins": {
+        "title": "ID Coin 数量",
+        "value": "--"
+      },
+      "metaso_price": {
+        "title": "$MetaSo 价格",
+        "value": "--"
+      },
+      "market_cap": {
+        "title": "$MetaSo 市值",
+        "value": "--"
+      }
+    },
+    "metablock": {
+      "title": "最新 MetaSo 交易",
+      "table": {
+        "block": "所在区块/高度",
+        "user_id": "用户 ID",
+        "time": "时间",
+        "protocol": "协议",
+        "txid": "TXID"
+      }
+    }
+  }
+} 

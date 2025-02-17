@@ -1,50 +1,105 @@
-# React + TypeScript + Vite
+# MetaSo Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[English](#english) | [中文](#中文)
 
-Currently, two official plugins are available:
+# English
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+MetaSo is a decentralized social media network platform based on Bitcoin, allowing users to build and participate in a truly decentralized social network.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Core Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Decentralized Data Storage**: All data is sourced from Bitcoin and its sidechains, with each node storing and indexing data locally
+- **Cross-Chain Support**: Built on MetaID protocol, supporting Bitcoin and its sidechains
+- **Customizable Nodes**: Each MetaSo node can be customized with unique UI, pricing standards, and filtering mechanisms
+- **Tokenomics**: Incentivized with $MetaSo tokens for network participation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Platform Advantages
+
+- **Account Portability**: One account/mnemonic to access all MetaSo social applications
+- **Data Interoperability**: Data can be shared and circulated between different social platforms
+- **Data Security**: Users have full control of their data, protected by blockchain technology
+- **Freedom of Speech**: No risk of account bans or content deletion by centralized platforms
+
+### Node Installation
+
+MetaSo provides a one-click installation package that includes:
+- Server installation program
+- Web-based installation interface
+- Built-in admin dashboard
+- API documentation
+- Automatic upgrade system
+
+### Network Overview
+
+Real-time statistics including:
+- Total users
+- Total MetaSo instances
+- Transaction volume
+- Token metrics
+- Network status
+
+## Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Visit `http://localhost:5173` to view the website.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+---
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+# 中文
+
+MetaSo 是一个基于比特币的去中心化社交媒体网络平台，让用户能够参与构建真正的去中心化社交网络。
+
+## 特点
+
+### 核心功能
+
+- **去中心化数据存储**：所有数据来源于比特币及其侧链，每个节点本地存储和索引数据
+- **跨链支持**：基于 MetaID 协议构建，支持比特币及其侧链
+- **节点可定制**：每个 MetaSo 节点都可以定制独特的 UI、定价标准和过滤机制
+- **代币经济**：通过 $MetaSo 代币激励网络参与者
+
+### 平台优势
+
+- **账户可移植性**：一个账户/助记词即可访问所有 MetaSo 社交应用
+- **数据互通性**：不同社交平台之间的数据可以共享和流通
+- **数据安全**：用户完全掌控自己的数据，受区块链技术保护
+- **言论自由**：无需担心账号被中心化平台封禁或内容被删除
+
+### 节点安装
+
+MetaSo 提供一键安装包，包含：
+- 服务器安装程序
+- 网页安装界面
+- 内置管理后台
+- API 文档
+- 自动升级系统
+
+### 网络概览
+
+实时统计数据包括：
+- 总用户数
+- MetaSo 实例总数
+- 交易量
+- 代币指标
+- 网络状态
+
+## 快速开始
+
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
 ```
+
+访问 `http://localhost:5173` 查看网站。

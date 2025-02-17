@@ -1,0 +1,204 @@
+{
+  "header": {
+    "home": "Home",
+    "intro": "Intro",
+    "install": "Install",
+    "explore": "Explore",
+    "experience": "Go Experience",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "footer": {
+    "slogan": "Building decentralization social network"
+  },
+  "home": {
+    "hero": {
+      "title": "Building a Scalable\nDecentralized Social Media\nNetwork on Bitcoin",
+      "install": "Install",
+      "experience": "Go Experience"
+    },
+    "stats": {
+      "users": "Users",
+      "nodes": "Nodes",
+      "transactions": "Transactions"
+    },
+    "intro": {
+      "title": "What is MetaSo?",
+      "description": "MetaSo is a decentralized social network software package based on MetaID protocol. Developers and users can participate in building a global Bitcoin-based decentralized social network by installing and deploying MetaSo nodes.",
+      "features": {
+        "decentralized": {
+          "title": "Total Decentralized",
+          "description": "MetaSo data is entirely sourced from on-chain data of Bitcoin and its sidechains, with each node locally storing and indexing the relevant data. MetaSo nodes are interconnected via P2P, without relying on any third parties, making it the first truly decentralized social media network based on Bitcoin."
+        },
+        "crosschain": {
+          "title": "Cross-Chain",
+          "description": "MetaSo is based on the MetaID protocol and fully supports the philosophy of MetaBitcoin Network, meaning it can support Bitcoin and its many sidechains. Users can choose to use Bitcoin assets within the MetaSo social media platform and select suitable sidechains for data on-chain. This approach addresses the issues of high transaction fees and network congestion on Bitcoin."
+        },
+        "customization": {
+          "title": "Allowing Deep Customization",
+          "description": "Each MetaSo node can modify its style through backend configuration, enabling every MetaSo node to have a unique UI interface. Each node can also customize its own pricing standards, blacklists, filtering mechanisms, and more. Additionally, experienced developers are allowed to perform deeper customizations and develop more features for social applications based on the MetaSo node."
+        }
+      }
+    },
+    "steps": {
+      "title": "Be a Part of the Decentralized Social Network for the World",
+      "step1": "Download & Install MetaSo Node",
+      "step2": "Config for Your Own Social Media App",
+      "step3": "Promote It And Get $METASO"
+    },
+    "faq": {
+      "title": "FAQ About MetaSo",
+      "q1": {
+        "question": "What types of APP can MetaSo nodes be used for?",
+        "answer": "In addition to web3 social applications, MetaSo can also create many types of applications such as notes, netbooks, games and music."
+      }
+    }
+  },
+  "intro": {
+    "hero": {
+      "title": "What is MetaSo?",
+      "description": "MetaSo is an open-source, social networking, Web3 middleware based on MetaID protocol. Developers can deploy new Web3 social applications in 20 minutes by simply editing the configuration files. MetaSo was launched and operated by DAO and incentivized with tokenomics. Data in Different MetaSo applications are interconnected and interoperable. MetaSo will bust data silos and build an ultimate decentralized Web3 social platform."
+    },
+    "why": {
+      "title": "Why do you need Metaso?",
+      "subtitle": "Metaso is a platform designed to provide safer, more convenient and more open social nodes",
+      "features": {
+        "account": {
+          "title": "One account / mnemonic phrase to use all social apps",
+          "description": "Metaso achieves account portability through the MetaID protocol. Users can use an account or mnemonic phrase to log in to all social applications that support Metaso."
+        },
+        "interconnection": {
+          "title": "Data interconnection between all social platforms",
+          "description": "This means that users' data on different social platforms can be circulated and shared with each other, improving the availability and connectivity of data."
+        },
+        "security": {
+          "title": "Users don't have to worry about being deleted or tampered with by social platforms",
+          "description": "Metaso ensures the decentralization and non-tampering of data by uploading all data to the chain, and the security of user data is protected."
+        },
+        "freedom": {
+          "title": "Users don't have to worry about their accounts being banned by social platforms",
+          "description": "Metaso provides independence between accounts and social platform accounts."
+        }
+      }
+    },
+    "features": {
+      "title": "Features",
+      "bitcoin": {
+        "title": "Completely based on Bitcoin",
+        "description": "Completely based on Bitcoin and Bitcoin-related ecology, data security cannot be tampered with and belongs to the user himself"
+      },
+      "metaid": {
+        "title": "Built based on MetaID protocol",
+        "description": "Built based on the MetaID protocol, one wallet uses all MetaSo social applications, and data interconnection between different applications"
+      },
+      "integrated": {
+        "title": "Highly integrated software",
+        "description": "The MetaSo software package is highly integrated and ordinary users can install it and become a node in the network within 30 minutes."
+      },
+      "incentives": {
+        "title": "Receive $MetaSo incentives",
+        "description": "By operating MetaSo, you can receive $MetaSo incentives and contribute to the global decentralized network."
+      }
+    },
+    "storage": {
+      "title": "Decentralized Data Storage",
+      "description": "Decentralized storage of data is one of the most important features of MetaSo. Thanks to the mechanisms of Bitcoin and Metaso, we can obtain a social network that belongs to humans around the world, where data is completely distributed and stored. This network is not controlled by any party, and the data belongs to the user himself."
+    },
+    "competitors": {
+      "title": "Competitors"
+    }
+  },
+  "install": {
+    "hero": {
+      "title": "Installation Guide",
+      "description": "To make MetaSo accessible to everyone, all programs are packaged into a single installation package, including one-click upgrade Installing, ensuring all MetaSo nodes across the network can stay in sync.",
+      "tutorial": "PS: If you need to view the tutorial on how to purchase a server, please refer to the",
+      "tutorial_link": "Tutorial"
+    },
+    "steps": {
+      "server": {
+        "title": "Server installer",
+        "description": "Execute the following command on your server to start the installer"
+      },
+      "access": {
+        "title": "Access the installation",
+        "description": "Access the installer page at http://[server-IP]:7171"
+      },
+      "test": {
+        "title": "Test the MetaSo service",
+        "description": "Test the MetaSo service at http://[server-IP]:3000"
+      },
+      "admin": {
+        "title": "Access admin settings",
+        "description": "Access admin settings at http://[server-IP]:3000/dashboard/Login"
+      },
+      "api": {
+        "title": "API documentation",
+        "description": "API documentation available at http://[server-IP]:7172"
+      }
+    },
+    "sections": {
+      "server": {
+        "title": "Server installer",
+        "description": "Execute the following command on your server to start the installer:"
+      },
+      "access": {
+        "title": "Access the installer",
+        "description": "Access the installer page at http://[server-IP]:7171 (port 7171 needs to be opened on your server)"
+      },
+      "test": {
+        "title": "Test the MetaSo service",
+        "description": "Test the MetaSo service at http://[server-IP]:3000 (port 3000 needs to be opened)"
+      },
+      "admin": {
+        "title": "Access admin settings",
+        "description": "Access admin settings at http://[server-IP]:3000/dashboard/Login"
+      }
+    },
+    "buttons": {
+      "upgrade": "Upgrade",
+      "copy": "Copy"
+    }
+  },
+  "explores": {
+    "hero": {
+      "title": "MetaSo Overview"
+    },
+    "stats": {
+      "total_users": {
+        "title": "Total number of users",
+        "value": "--"
+      },
+      "total_instances": {
+        "title": "Total MetaSo instances",
+        "value": "--"
+      },
+      "total_transactions": {
+        "title": "Total Transactions",
+        "value": "--"
+      },
+      "id_coins": {
+        "title": "Number of ID coins",
+        "value": "--"
+      },
+      "metaso_price": {
+        "title": "$MetaSo price",
+        "value": "--"
+      },
+      "market_cap": {
+        "title": "$MetaSo Market Cap",
+        "value": "--"
+      }
+    },
+    "metablock": {
+      "title": "Latest MetaSo Transactions",
+      "table": {
+        "block": "Block/Height",
+        "user_id": "User ID",
+        "time": "Time",
+        "protocol": "Protocol",
+        "txid": "TXID"
+      }
+    }
+  }
+} 

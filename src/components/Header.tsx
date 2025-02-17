@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 import Logo from "@/assets/images/logo.svg?react";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en');
+  };
 
   const getLinkClass = (path: string) => {
     return location.pathname === path
@@ -18,43 +24,51 @@ const Header: React.FC = () => {
       <Logo />
       <nav className="hidden md:flex space-x-12">
         <Link to="/" className={getLinkClass("/")}>
-          Home
+          {t('header.home')}
         </Link>
         <Link to="/intro" className={getLinkClass("/intro")}>
-          Intro
+          {t('header.intro')}
         </Link>
         <Link to="/install" className={getLinkClass("/install")}>
-          Install
+          {t('header.install')}
         </Link>
         <Link
           to="/explores"
           className={`${getLinkClass("/explores")} flex items-center gap-x-1`}
         >
-          <span>Explore</span>
+          <span>{t('header.explore')}</span>
           <ChevronDown className="w-2.5" />
         </Link>
       </nav>
-      <a
-        href="https://www.show.now/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="bg-[#002E33] font-semibold text-white text-xs px-3.5 py-2.5 rounded-full focus:outline-none hidden md:block hover:text-white"
-      >
-        Go Experience
-      </a>
+      <div className="hidden md:flex items-center gap-4">
+        <button
+          onClick={toggleLanguage}
+          className="px-2 py-1 rounded border border-[#002E33] text-[#002E33] focus:outline-none active:outline-none hover:bg-[#002E33] hover:text-white transition-colors duration-200"
+        >
+          {i18n.language === 'en' ? '中文' : 'EN'}
+        </button>
+        <a
+          href="https://www.show.now/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#002E33] font-semibold text-white text-xs px-3.5 py-2.5 rounded-full focus:outline-none hover:text-white"
+        >
+          {t('header.experience')}
+        </a>
+      </div>
       <button
         className="md:hidden text-[#303133]"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
-        {isMobileMenuOpen ? "Close" : "Menu"}
+        {isMobileMenuOpen ? t('header.close') : t('header.menu')}
       </button>
       {isMobileMenuOpen && (
         <nav className="md:hidden absolute top-20 left-0 w-full bg-white flex flex-col items-center space-y-4 py-4">
           <Link to="/intro" className={getLinkClass("/intro")}>
-            Intro
+            {t('header.intro')}
           </Link>
           <Link to="/install" className={getLinkClass("/install")}>
-            Install
+            {t('header.install')}
           </Link>
           <Link to="/" className={getLinkClass("/")}>
             $Metaso
@@ -63,12 +77,23 @@ const Header: React.FC = () => {
             to="/explores"
             className={`${getLinkClass("/explores")} flex items-center gap-x-1`}
           >
-            <span>Explores</span>
+            <span>{t('header.explore')}</span>
             <ChevronDown className="w-2.5" />
           </Link>
-          <button className="bg-[#002E33] font-semibold text-white text-xs px-3.5 py-2.5 rounded-full focus:outline-none">
-            Go Experience
+          <button
+            onClick={toggleLanguage}
+            className="px-2 py-1 rounded border border-[#002E33] text-[#002E33] focus:outline-none active:outline-none hover:bg-[#002E33] hover:text-white transition-colors duration-200"
+          >
+            {i18n.language === 'en' ? '中文' : 'EN'}
           </button>
+          <a
+            href="https://www.show.now/"
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="bg-[#002E33] font-semibold text-white text-xs px-3.5 py-2.5 rounded-full focus:outline-none"
+          >
+            {t('header.experience')}
+          </a>
         </nav>
       )}
     </header>
