@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image1 from "@/assets/explore/image1.png";
@@ -9,9 +9,12 @@ import Image4 from "@/assets/explore/image4.png";
 import Image5 from "@/assets/explore/image5.png";
 import Image6 from "@/assets/explore/image6.png";
 import MetaBlockData from "@/assets/explore/MetaBlockData.png";
+import { useQueryCoinSummary } from "@/queries";
+import AnimatedNumber from "@/components/AnimatedNumber";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
+  const { data } = useQueryCoinSummary();
 
   return (
     <>
@@ -24,16 +27,14 @@ const Home: React.FC = () => {
         <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 flex flex-col min-h-[800px] items-center">
           <Header />
           <h1 className="font-bold text-center text-[#001F23] xl:mt-[70px] text-xl sm:text-3xl md:text-4xl xl:text-6xl">
-            {t('explores.hero.title')}
+            {t("explores.hero.title")}
           </h1>
           <div className="mt-4 sm:mt-8 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full py-8">
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  {t('explores.stats.total_users.value')}
-                </h1>
+                <AnimatedNumber value={data?.totalUser || 0} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
-                  {t('explores.stats.total_users.title')}
+                  {t("explores.stats.total_users.title")}
                 </h6>
               </div>
               <img
@@ -44,11 +45,9 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  {t('explores.stats.total_instances.value')}
-                </h1>
+                <AnimatedNumber value={data?.totalMetaSo || 0} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
-                  {t('explores.stats.total_instances.title')}
+                  {t("explores.stats.total_instances.title")}
                 </h6>
               </div>
               <img
@@ -59,11 +58,9 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  {t('explores.stats.total_transactions.value')}
-                </h1>
+                <AnimatedNumber value={data?.totalTx || 0} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
-                  {t('explores.stats.total_transactions.title')}
+                  {t("explores.stats.total_transactions.title")}
                 </h6>
               </div>
               <img
@@ -74,11 +71,9 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  {t('explores.stats.id_coins.value')}
-                </h1>
+                <AnimatedNumber value={data?.totalIdCoins || 0} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
-                  {t('explores.stats.id_coins.title')}
+                  {t("explores.stats.id_coins.title")}
                 </h6>
               </div>
               <img
@@ -89,11 +84,9 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  {t('explores.stats.metaso_price.value')}
-                </h1>
+                <AnimatedNumber value={Number(data?.price) || 0} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
-                  {t('explores.stats.metaso_price.title')}
+                  {t("explores.stats.metaso_price.title")}
                 </h6>
               </div>
               <img
@@ -104,11 +97,9 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <h1 className="text-xl sm:text-2xl xl:text-2xl font-bold text-[#002E33]">
-                  {t('explores.stats.market_cap.value')}
-                </h1>
+                <AnimatedNumber value={Number(data?.marketCap) || 0} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
-                  {t('explores.stats.market_cap.title')}
+                  {t("explores.stats.market_cap.title")}
                 </h6>
               </div>
               <img
@@ -123,7 +114,7 @@ const Home: React.FC = () => {
       <div className="w-full bg-[#78DAE4]">
         <div className="w-full max-w-screen-lg mx-auto px-4 lg:px-0 py-24">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-[#001F23] mb-16">
-            {t('explores.metablock.title')}
+            {t("explores.metablock.title")}
           </h2>
           <div className="w-full max-w-[1200px] mx-auto">
             <img

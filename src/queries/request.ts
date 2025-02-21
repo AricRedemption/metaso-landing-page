@@ -66,30 +66,31 @@ async function request<T = unknown>(
   }
 }
 
-interface ManResult<T> {
+interface MetaSoResult<T> {
   code: number;
-  msg: string;
+  message: string;
+  processingTime: number;
   data: T;
 }
 
-const manRequest = <T>(url: string, options: RequestOption): Promise<T> =>
-  request<ManResult<T>>(url, options).then((result) => {
-    if (result.code === 1) {
+const metaSoRequest = <T>(url: string, options: RequestOption): Promise<T> =>
+  request<MetaSoResult<T>>(url, options).then((result) => {
+    if (result.code === 0 && result.message === "success") {
       return result.data;
     }
-    throw new Error(result.msg);
+    throw new Error(result.message);
   });
 
-export const manApi = <T>(path: string) => {
+export const metaSoApi = <T>(path: string) => {
   return {
     get: (params?: OptionParams, headers?: Headers) =>
-      manRequest<T>(`${baseUrl}${path}`, {
+      metaSoRequest<T>(`${baseUrl}${path}`, {
         params,
         headers,
         method: "GET",
       }),
     post: (data?: OptionData, headers?: Headers) =>
-      manRequest<T>(`${baseUrl}${path}`, {
+      metaSoRequest<T>(`${baseUrl}${path}`, {
         data,
         headers,
         method: "POST",

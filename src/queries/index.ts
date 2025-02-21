@@ -1,21 +1,35 @@
-import { manApi } from "./request";
+import { metaSoApi } from "./request";
 import { useQuery } from "@tanstack/react-query";
 
-export function getCountInfo() {
-  return manApi<{
-    Count: {
-      block: number;
-      Pin: number;
-      metaId: number;
-      app: number;
-      node: number;
-    };
-  }>("/api/pin/list").get({ page: 1, size: 1 });
+interface MetaSoTickData {
+  tickId: string;
+  tick: string;
+  tokenName: string;
+  totalSupply: string;
+  circulatingSupply: string;
+  priceChange24h: string;
+  price: string;
+  priceUsd: string;
+  marketCapChange24h: string;
+  marketCap: string;
+  marketCapUsd: string;
+  isActive: boolean;
+  activeMetaBlockHeight: number;
+  totalTx: number;
+  totalMetaId: number;
+  totalMetaSo: number;
+  totalIdCoins: number;
+  totalNode: number;
+  totalUser: number;
 }
 
-export function useQueryCountInfo() {
+export function getCoinSummary() {
+  return metaSoApi<MetaSoTickData>("/v1/metaso/coin/summary").get();
+}
+
+export function useQueryCoinSummary() {
   return useQuery({
-    queryKey: ["CountInfo"],
-    queryFn: () => getCountInfo(),
+    queryKey: ["CoinSummary"],
+    queryFn: () => getCoinSummary(),
   });
 }
