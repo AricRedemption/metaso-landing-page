@@ -32,7 +32,7 @@ const Home: React.FC = () => {
           <div className="mt-4 sm:mt-8 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full py-8">
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalUser || 0} />
+                <AnimatedNumber value={data?.totalUser} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.total_users.title")}
                 </h6>
@@ -45,7 +45,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalMetaSo || 0} />
+                <AnimatedNumber value={data?.totalMetaSo} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.total_instances.title")}
                 </h6>
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalTx || 0} />
+                <AnimatedNumber value={data?.totalTx} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.total_transactions.title")}
                 </h6>
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalIdCoins || 0} />
+                <AnimatedNumber value={data?.totalIdCoins} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.id_coins.title")}
                 </h6>
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={Number(data?.price) || 0} />
+                <AnimatedNumber value={data?.price} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.metaso_price.title")}
                 </h6>
@@ -97,7 +97,8 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={Number(data?.marketCap) || 0} />
+                <AnimatedNumber value={data?.marketCap} />
+
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.market_cap.title")}
                 </h6>

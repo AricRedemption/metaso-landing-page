@@ -54,7 +54,7 @@ const Home: React.FC = () => {
           <div className="mt-4 sm:mt-8 lg:mt-16 grid grid-cols-3 gap-5 w-full py-8">
             <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-3 md:col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalUser || 0} />
+                <AnimatedNumber value={data?.totalUser} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("home.stats.users")}
                 </h6>
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-3 md:col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalNode || 0} />
+                <AnimatedNumber value={data?.totalNode} />
 
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("home.stats.nodes")}
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 pt-[30px] w-full h-[181px] rounded-[20px] col-span-3 md:col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalTx || 0} />
+                <AnimatedNumber value={data?.totalTx} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("home.stats.transactions")}
                 </h6>

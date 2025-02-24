@@ -1,11 +1,23 @@
 import { useEffect, useState } from "react";
 
-const AnimatedNumber: React.FC<{ value: number }> = ({ value }) => {
-  const [displayValue, setDisplayValue] = useState(0);
+const AnimatedNumber: React.FC<{ value: number | string | undefined }> = ({ value }) => {
+  const [displayValue, setDisplayValue] = useState<number | string>(0);
 
   useEffect(() => {
+    if (value === undefined) {
+      setDisplayValue('--');
+      return;
+    }
+
+    const numericValue = typeof value === 'string' ? Number(value) : value;
+    
+    if (isNaN(numericValue)) {
+      setDisplayValue('--');
+      return;
+    }
+
     let start = 0;
-    const end = value;
+    const end = numericValue;
     const duration = 500; // 动画持续时间（毫秒）
     const increment = end / (duration / 10);
 
@@ -23,7 +35,7 @@ const AnimatedNumber: React.FC<{ value: number }> = ({ value }) => {
 
   return (
     <h1 className="text-2xl sm:text-3xl xl:text-5xl font-bold text-[#002E33]">
-      {displayValue.toLocaleString()}
+      {typeof displayValue === 'number' ? displayValue.toLocaleString() : displayValue}
     </h1>
   );
 };
