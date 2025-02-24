@@ -8,13 +8,15 @@ import Image3 from "@/assets/explore/image3.png";
 import Image4 from "@/assets/explore/image4.png";
 import Image5 from "@/assets/explore/image5.png";
 import Image6 from "@/assets/explore/image6.png";
-import MetaBlockData from "@/assets/explore/MetaBlockData.png";
-import { useQueryCoinSummary } from "@/queries";
+import { useQueryCoinSummary, useQueryTxList } from "@/queries";
 import AnimatedNumber from "@/components/AnimatedNumber";
+import dayjs from "dayjs";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
-  const { data } = useQueryCoinSummary();
+  const { data: summaryData } = useQueryCoinSummary();
+  const { data: txListData } = useQueryTxList();
+  const metaidManUrl = import.meta.env.VITE_METAID_MAN_URL;
 
   return (
     <>
@@ -32,7 +34,7 @@ const Home: React.FC = () => {
           <div className="mt-4 sm:mt-8 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full py-8">
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalUser} />
+                <AnimatedNumber value={summaryData?.totalUser} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.total_users.title")}
                 </h6>
@@ -45,7 +47,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalMetaSo} />
+                <AnimatedNumber value={summaryData?.totalMetaSo} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.total_instances.title")}
                 </h6>
@@ -58,7 +60,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalTx} />
+                <AnimatedNumber value={summaryData?.totalTx} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.total_transactions.title")}
                 </h6>
@@ -71,7 +73,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.totalIdCoins} />
+                <AnimatedNumber value={summaryData?.totalIdCoins} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.id_coins.title")}
                 </h6>
@@ -84,7 +86,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.price} />
+                <AnimatedNumber value={summaryData?.price} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.metaso_price.title")}
                 </h6>
@@ -97,7 +99,7 @@ const Home: React.FC = () => {
             </div>
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={data?.marketCap} />
+                <AnimatedNumber value={summaryData?.marketCap} />
 
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.market_cap.title")}
@@ -118,11 +120,44 @@ const Home: React.FC = () => {
             {t("explores.metablock.title")}
           </h2>
           <div className="w-full max-w-[1200px] mx-auto">
-            <img
-              src={MetaBlockData}
-              alt="Latest MetaBlock Data"
-              className="w-full h-auto rounded-2xl"
-            />
+            <div className="bg-[#C1F2F7] rounded-2xl overflow-hidden">
+              <div className="grid grid-cols-5 bg-[#80CBD3] px-6 py-4 text-[#001F23] font-medium">
+                <div>Height of block</div>
+                <div>User ID</div>
+                <div>Time</div>
+                <div>Protocol</div>
+                <div>TXID</div>
+              </div>
+
+              <div>
+                {txListData?.list.map((tx) => (
+                  <div
+                    key={tx.id}
+                    className="grid grid-cols-5 px-6 py-4 text-[#002E33] hover:bg-[#78DAE4]/10 transition-colors"
+                  >
+                    <div>{tx.height ?? "--"}</div>
+                    <div className="truncate">{tx.creator.slice(0, 4)}...{tx.creator.slice(-4)}</div>
+                    <div>
+                      {tx.timestamp
+                        ? dayjs(tx.timestamp).format("YYYY-MM-DD HH:mm:ss")
+                        : "--"}
+                    </div>
+                    <div>{tx.path.split("/")[2] || "--"}</div>
+                    <div className="truncate">
+                      <a
+                        href={`${metaidManUrl}/search/${tx.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#002E33] hover:text-[#004F59] hover:underline"
+                        title={tx.id}
+                      >
+                        {tx.id.slice(0, 8)}...{tx.id.slice(-4)}
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
