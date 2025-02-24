@@ -34,7 +34,7 @@ const Home: React.FC = () => {
           <div className="mt-4 sm:mt-8 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full py-8">
             <div className="flex justify-between bg-white/[0.88] px-8 py-[30px] w-full rounded-[20px] col-span-1">
               <div className="space-y-1">
-                <AnimatedNumber value={summaryData?.totalUser} />
+                <AnimatedNumber value={summaryData?.totalMetaId} />
                 <h6 className="font-medium text-[#002E33]/[0.77]">
                   {t("explores.stats.total_users.title")}
                 </h6>
@@ -123,7 +123,7 @@ const Home: React.FC = () => {
             <div className="bg-[#C1F2F7] rounded-2xl overflow-hidden">
               <div className="grid grid-cols-5 bg-[#80CBD3] px-6 py-4 text-[#001F23] font-medium">
                 <div>Height of block</div>
-                <div>User ID</div>
+                <div>MetaID</div>
                 <div>Time</div>
                 <div>Protocol</div>
                 <div>TXID</div>
@@ -136,7 +136,9 @@ const Home: React.FC = () => {
                     className="grid grid-cols-5 px-6 py-4 text-[#002E33] hover:bg-[#78DAE4]/10 transition-colors"
                   >
                     <div>{tx.height ?? "--"}</div>
-                    <div className="truncate">{tx.creator.slice(0, 4)}...{tx.creator.slice(-4)}</div>
+                    <div className="truncate">
+                      {tx.metaid.slice(0, 4)}...{tx.metaid.slice(-4)}
+                    </div>
                     <div>
                       {tx.timestamp
                         ? dayjs(tx.timestamp).format("YYYY-MM-DD HH:mm:ss")

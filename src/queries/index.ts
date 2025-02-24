@@ -19,8 +19,6 @@ interface MetaSoTickData {
   totalMetaId: number;
   totalMetaSo: number;
   totalIdCoins: number;
-  totalNode: number;
-  totalUser: number;
 }
 
 interface MetaSoTxItem {
