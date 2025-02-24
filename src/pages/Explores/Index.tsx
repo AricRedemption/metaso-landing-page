@@ -137,7 +137,15 @@ const Home: React.FC = () => {
                   >
                     <div>{tx.height ?? "--"}</div>
                     <div className="truncate">
-                      {tx.metaid.slice(0, 4)}...{tx.metaid.slice(-4)}
+                      <a
+                        href={`${metaidManUrl}/search/${tx.metaid}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#002E33] hover:text-[#004F59] hover:underline"
+                        title={tx.metaid}
+                      >
+                        {tx.metaid.slice(0, 4)}...{tx.metaid.slice(-4)}
+                      </a>
                     </div>
                     <div>
                       {tx.timestamp
