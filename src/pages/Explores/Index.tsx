@@ -17,6 +17,8 @@ const Home: React.FC = () => {
   const { data: summaryData } = useQueryCoinSummary();
   const { data: txListData } = useQueryTxList();
   const metaidManUrl = import.meta.env.VITE_METAID_MAN_URL;
+  const mvcScanUrl = import.meta.env.VITE_MVC_SCAN_URL;
+  const btcScanUrl = import.meta.env.VITE_BTC_SCAN_URL;
 
   return (
     <>
@@ -138,7 +140,7 @@ const Home: React.FC = () => {
                     <div>{tx.height ?? "--"}</div>
                     <div className="truncate">
                       <a
-                        href={`${metaidManUrl}/search/${tx.metaid}`}
+                        href={`${metaidManUrl}/metaid-detail/${tx.metaid}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#002E33] hover:text-[#004F59] hover:underline"
@@ -155,7 +157,7 @@ const Home: React.FC = () => {
                     <div>{tx.path.split("/")[2] || "--"}</div>
                     <div className="truncate">
                       <a
-                        href={`${metaidManUrl}/search/${tx.id}`}
+                        href={`${tx.chainName === "mvc" ? mvcScanUrl : btcScanUrl}/tx/${tx.id}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#002E33] hover:text-[#004F59] hover:underline"

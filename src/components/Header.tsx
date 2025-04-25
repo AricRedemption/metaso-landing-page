@@ -43,7 +43,7 @@ const Header: React.FC = () => {
       <div className="hidden md:flex items-center gap-4">
         <button
           onClick={toggleLanguage}
-          className="px-2 py-1 rounded border border-[#002E33] text-[#002E33] focus:outline-none active:outline-none hover:bg-[#002E33] hover:text-white transition-colors duration-200"
+          className="px-4 py-1 rounded-full border border-[#002E33] text-[#002E33] focus:outline-none active:outline-none hover:bg-[#002E33] hover:text-white transition-colors duration-200"
         >
           {i18n.language === 'en' ? '中文' : 'EN'}
         </button>
