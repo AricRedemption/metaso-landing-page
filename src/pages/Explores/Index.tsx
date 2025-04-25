@@ -15,30 +15,33 @@ import dayjs from "dayjs";
 const Home: React.FC = () => {
   const { t } = useTranslation();
   const [pagination, setPagination] = useState({
-    cursor: 0,
+    page: 1,
     size: 10,
   });
   
   const { data: summaryData } = useQueryCoinSummary();
-  const { data: txListData } = useQueryTxList(pagination);
+  const { data: txListData, isLoading, isFetching } = useQueryTxList({
+    cursor: (pagination.page - 1) * pagination.size,
+    size: pagination.size
+  });
   const metaidManUrl = import.meta.env.VITE_METAID_MAN_URL;
   const mvcScanUrl = import.meta.env.VITE_MVC_SCAN_URL;
   const btcScanUrl = import.meta.env.VITE_BTC_SCAN_URL;
 
   const handlePrevPage = () => {
-    if (pagination.cursor > 0) {
+    if (pagination.page > 1) {
       setPagination({
         ...pagination,
-        cursor: pagination.cursor - pagination.size,
+        page: pagination.page - 1,
       });
     }
   };
 
   const handleNextPage = () => {
-    if (txListData && txListData.total > pagination.cursor + pagination.size) {
+    if (txListData && txListData.total > pagination.page * pagination.size) {
       setPagination({
         ...pagination,
-        cursor: pagination.cursor + pagination.size,
+        page: pagination.page + 1,
       });
     }
   };
@@ -154,80 +157,94 @@ const Home: React.FC = () => {
                 <div>TXID</div>
               </div>
 
-              <div>
-                {txListData?.list.map((tx) => (
-                  <div
-                    key={tx.id}
-                    className="grid grid-cols-5 px-6 py-4 text-[#002E33] hover:bg-[#78DAE4]/10 transition-colors"
-                  >
-                    <div>{tx.height ?? "--"}</div>
-                    <div className="truncate">
-                      <a
-                        href={`${metaidManUrl}/metaid-detail/${tx.metaid}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#002E33] hover:text-[#004F59] hover:underline"
-                        title={tx.metaid}
-                      >
-                        {tx.metaid.slice(0, 4)}...{tx.metaid.slice(-4)}
-                      </a>
+              <div className="min-h-[560px] relative">
+                {/* 数据列表 */}
+                <div className={`transition-opacity duration-300 ${(isLoading || isFetching) ? 'opacity-50' : 'opacity-100'}`}>
+                  {txListData?.list.map((tx) => (
+                    <div
+                      key={tx.id}
+                      className="grid grid-cols-5 px-6 py-4 text-[#002E33] hover:bg-[#78DAE4]/10 transition-colors"
+                    >
+                      <div>{tx.height ?? "--"}</div>
+                      <div className="truncate">
+                        <a
+                          href={`${metaidManUrl}/metaid-detail/${tx.metaid}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#002E33] hover:text-[#004F59] hover:underline"
+                          title={tx.metaid}
+                        >
+                          {tx.metaid.slice(0, 4)}...{tx.metaid.slice(-4)}
+                        </a>
+                      </div>
+                      <div>
+                        {tx.timestamp
+                          ? dayjs(tx.timestamp).format("YYYY-MM-DD HH:mm:ss")
+                          : "--"}
+                      </div>
+                      <div>{tx.path.split("/")[2] || "--"}</div>
+                      <div className="truncate">
+                        <a
+                          href={`${tx.chainName === "mvc" ? mvcScanUrl : btcScanUrl}/tx/${tx.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#002E33] hover:text-[#004F59] hover:underline"
+                          title={tx.id}
+                        >
+                          {tx.id.slice(0, 8)}...{tx.id.slice(-4)}
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      {tx.timestamp
-                        ? dayjs(tx.timestamp).format("YYYY-MM-DD HH:mm:ss")
-                        : "--"}
-                    </div>
-                    <div>{tx.path.split("/")[2] || "--"}</div>
-                    <div className="truncate">
-                      <a
-                        href={`${tx.chainName === "mvc" ? mvcScanUrl : btcScanUrl}/tx/${tx.id}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#002E33] hover:text-[#004F59] hover:underline"
-                        title={tx.id}
-                      >
-                        {tx.id.slice(0, 8)}...{tx.id.slice(-4)}
-                      </a>
-                    </div>
+                  ))}
+                </div>
+                
+                {/* 空状态展示 */}
+                {!isLoading && !isFetching && (!txListData?.list || txListData.list.length === 0) && (
+                  <div className="px-6 py-12 text-center text-[#002E33] absolute inset-0 flex items-center justify-center">
+                    {t("explores.metablock.no_data")}
                   </div>
-                ))}
+                )}
               </div>
               
               {/* 分页控件 */}
               <div className="flex justify-between items-center px-6 py-4 bg-[#80CBD3]">
                 <div className="text-[#001F23]">
-                  {txListData?.total ? `总共 ${txListData.total} 条记录` : "加载中..."}
+                  {txListData?.total ? t("explores.metablock.pagination.total", { total: txListData.total }) : t("explores.metablock.pagination.loading")}
                 </div>
                 <div className="flex gap-2">
                   <button
                     onClick={handlePrevPage}
-                    disabled={pagination.cursor <= 0}
+                    disabled={pagination.page <= 1 || isLoading || isFetching}
                     className={`px-4 py-2 rounded-md ${
-                      pagination.cursor <= 0
+                      pagination.page <= 1 || isLoading || isFetching
                         ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                         : "bg-[#002E33] text-white hover:bg-[#004F59]"
                     }`}
                   >
-                    上一页
+                    {t("explores.metablock.pagination.prev")}
                   </button>
                   <button
                     onClick={handleNextPage}
                     disabled={
                       !txListData ||
-                      txListData.total <= pagination.cursor + pagination.size
+                      txListData.total <= pagination.page * pagination.size ||
+                      isLoading ||
+                      isFetching
                     }
                     className={`px-4 py-2 rounded-md ${
                       !txListData ||
-                      txListData.total <= pagination.cursor + pagination.size
+                      txListData.total <= pagination.page * pagination.size ||
+                      isLoading ||
+                      isFetching
                         ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                         : "bg-[#002E33] text-white hover:bg-[#004F59]"
                     }`}
                   >
-                    下一页
+                    {t("explores.metablock.pagination.next")}
                   </button>
                 </div>
                 <div className="text-[#001F23]">
-                  当前第 {Math.floor(pagination.cursor / pagination.size) + 1} 页
+                  {t("explores.metablock.pagination.current", { page: pagination.page })}
                 </div>
               </div>
             </div>

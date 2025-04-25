@@ -198,7 +198,15 @@
         "time": "时间",
         "protocol": "协议",
         "txid": "TXID"
-      }
+      },
+      "pagination": {
+        "total": "总共 {{total}} 条记录",
+        "loading": "加载中...",
+        "prev": "上一页",
+        "next": "下一页",
+        "current": "当前第 {{page}} 页"
+      },
+      "no_data": "暂无交易数据"
     }
   }
 } 

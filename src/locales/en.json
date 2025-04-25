@@ -198,7 +198,15 @@
         "time": "Time",
         "protocol": "Protocol",
         "txid": "TXID"
-      }
+      },
+      "pagination": {
+        "total": "Total {{total}} records",
+        "loading": "Loading...",
+        "prev": "Previous",
+        "next": "Next",
+        "current": "Page {{page}}"
+      },
+      "no_data": "No transaction data found"
     }
   }
 } 
