@@ -53,13 +53,14 @@ export function useQueryCoinSummary() {
   });
 }
 
-export function getTxList() {
-  return metaSoApi<MetaSoTxListResponse>("/v1/metaso/tx-list").get();
+export function getTxList(params?: { cursor?: number | string; size?: number | string }) {
+  return metaSoApi<MetaSoTxListResponse>("/v1/metaso/tx-list").get(params);
 }
 
-export function useQueryTxList() {
+export function useQueryTxList(params?: { cursor?: number | string; size?: number | string }) {
   return useQuery({
-    queryKey: ["TxList"],
-    queryFn: () => getTxList(),
+    queryKey: ["TxList", params],
+    queryFn: () => getTxList(params),
+    refetchInterval: 5000, // 每5秒刷新一次
   });
 }

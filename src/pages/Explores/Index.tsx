@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,11 +14,34 @@ import dayjs from "dayjs";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
+  const [pagination, setPagination] = useState({
+    cursor: 0,
+    size: 10,
+  });
+  
   const { data: summaryData } = useQueryCoinSummary();
-  const { data: txListData } = useQueryTxList();
+  const { data: txListData } = useQueryTxList(pagination);
   const metaidManUrl = import.meta.env.VITE_METAID_MAN_URL;
   const mvcScanUrl = import.meta.env.VITE_MVC_SCAN_URL;
   const btcScanUrl = import.meta.env.VITE_BTC_SCAN_URL;
+
+  const handlePrevPage = () => {
+    if (pagination.cursor > 0) {
+      setPagination({
+        ...pagination,
+        cursor: pagination.cursor - pagination.size,
+      });
+    }
+  };
+
+  const handleNextPage = () => {
+    if (txListData && txListData.total > pagination.cursor + pagination.size) {
+      setPagination({
+        ...pagination,
+        cursor: pagination.cursor + pagination.size,
+      });
+    }
+  };
 
   return (
     <>
@@ -168,6 +191,44 @@ const Home: React.FC = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+              
+              {/* 分页控件 */}
+              <div className="flex justify-between items-center px-6 py-4 bg-[#80CBD3]">
+                <div className="text-[#001F23]">
+                  {txListData?.total ? `总共 ${txListData.total} 条记录` : "加载中..."}
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={handlePrevPage}
+                    disabled={pagination.cursor <= 0}
+                    className={`px-4 py-2 rounded-md ${
+                      pagination.cursor <= 0
+                        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                        : "bg-[#002E33] text-white hover:bg-[#004F59]"
+                    }`}
+                  >
+                    上一页
+                  </button>
+                  <button
+                    onClick={handleNextPage}
+                    disabled={
+                      !txListData ||
+                      txListData.total <= pagination.cursor + pagination.size
+                    }
+                    className={`px-4 py-2 rounded-md ${
+                      !txListData ||
+                      txListData.total <= pagination.cursor + pagination.size
+                        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                        : "bg-[#002E33] text-white hover:bg-[#004F59]"
+                    }`}
+                  >
+                    下一页
+                  </button>
+                </div>
+                <div className="text-[#001F23]">
+                  当前第 {Math.floor(pagination.cursor / pagination.size) + 1} 页
+                </div>
               </div>
             </div>
           </div>
