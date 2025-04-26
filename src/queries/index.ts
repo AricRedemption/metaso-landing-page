@@ -35,6 +35,7 @@ interface MetaSoTxItem {
   creator: string;
   initialOwner: string;
   timestamp: number;
+  txId: string;
 }
 
 interface MetaSoTxListResponse {

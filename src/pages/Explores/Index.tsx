@@ -185,7 +185,7 @@ const Home: React.FC = () => {
                       <div>{tx.path.split("/")[2] || "--"}</div>
                       <div className="truncate">
                         <a
-                          href={`${tx.chainName === "mvc" ? mvcScanUrl : btcScanUrl}/tx/${tx.id}`}
+                          href={`${tx.chainName === "mvc" ? mvcScanUrl : btcScanUrl}/tx/${tx.txId}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-[#002E33] hover:text-[#004F59] hover:underline"
