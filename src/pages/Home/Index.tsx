@@ -196,30 +196,42 @@ const Home: React.FC = () => {
           <h1 className="font-bold text-center text-[#001F23] mt-8 xl:mt-[50px] text-xl sm:text-2xl md:text-3xl xl:text-4xl max-w-screen-md text-balance">
             {t("home.faq.title")}
           </h1>
-          <div className="lg:mt-[59px] grid grid-cols-3 xl:gap-12 gap-8 w-full py-8">
-            <div className="flex flex-col gap-y-4 bg-[#A7F0FF;] px-6 pt-[37px] w-full h-60 rounded-2xl col-span-3 md:col-span-1">
-              <h4 className="text-sm sm:text-base xl:text-lg font-semibold text-[#002E33]">
-                {t("home.faq.q1.question")}
-              </h4>
-              <p className="text-sm font-medium text-[#002E33]/60">
-                {t("home.faq.q1.answer")}
-              </p>
+          <div className="lg:mt-[59px] flex flex-col gap-8 w-full py-8">
+            <div className="grid grid-cols-3 xl:gap-12 gap-8 w-full">
+              <div className="flex flex-col gap-y-4 bg-[#A7F0FF] px-6 py-8 w-full rounded-2xl col-span-3 md:col-span-1">
+                <h4 className="text-sm sm:text-base xl:text-lg font-semibold text-[#002E33]">
+                  {t("home.faq.q1.question")}
+                </h4>
+                <p className="text-sm font-medium text-[#002E33]/60">
+                  {t("home.faq.q1.answer")}
+                </p>
+              </div>
+              <div className="flex flex-col gap-y-4 bg-[#A7F0FF] px-6 py-8 w-full rounded-2xl col-span-3 md:col-span-1">
+                <h4 className="text-xs sm:text-base xl:text-lg font-semibold text-[#002E33]">
+                  {t("home.faq.q2.question")}
+                </h4>
+                <p className="text-xs font-medium text-[#002E33]/60">
+                  {t("home.faq.q2.answer")}
+                </p>
+              </div>
+              <div className="flex flex-col gap-y-4 bg-[#A7F0FF] px-6 py-8 w-full rounded-2xl col-span-3 md:col-span-1">
+                <h4 className="text-sm sm:text-base xl:text-lg font-semibold text-[#002E33]">
+                  {t("home.faq.q3.question")}
+                </h4>
+                <p className="text-xs font-medium text-[#002E33]/60">
+                  {t("home.faq.q3.answer")}
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col gap-y-4 bg-[#A7F0FF;] px-6 pt-[37px] w-full h-60 rounded-2xl col-span-3 md:col-span-1">
-              <h4 className="text-sm sm:text-base xl:text-lg font-semibold text-[#002E33]">
-                {t("home.faq.q2.question")}
-              </h4>
-              <p className="text-sm font-medium text-[#002E33]/60">
-                {t("home.faq.q2.answer")}
-              </p>
-            </div>
-            <div className="flex flex-col gap-y-4 bg-[#A7F0FF;] px-6 pt-[37px] w-full h-60 rounded-2xl col-span-3 md:col-span-1">
-              <h4 className="text-sm sm:text-base xl:text-lg font-semibold text-[#002E33]">
-                {t("home.faq.q3.question")}
-              </h4>
-              <p className="text-sm font-medium text-[#002E33]/60">
-                {t("home.faq.q3.answer")}
-              </p>
+            <div className="w-full">
+              <div className="flex flex-col gap-y-4 bg-[#A7F0FF] px-6 py-8 w-full rounded-2xl">
+                <h4 className="text-sm sm:text-base xl:text-lg font-semibold text-[#002E33]">
+                  {t("home.faq.q4.question")}
+                </h4>
+                <p className="text-xs font-medium text-[#002E33]/60">
+                  {t("home.faq.q4.answer")}
+                </p>
+              </div>
             </div>
           </div>
         </div>

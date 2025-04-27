@@ -4,6 +4,7 @@
     "intro": "Intro",
     "install": "Install",
     "explore": "Explore",
+    "docs": "Docs",
     "experience": "Go Experience",
     "menu": "Menu",
     "close": "Close"
@@ -49,8 +50,20 @@
     "faq": {
       "title": "FAQ About MetaSo",
       "q1": {
-        "question": "What types of APP can MetaSo nodes be used for?",
+        "question": "What Types Of App Can Metaso Nodes Be Used For?",
         "answer": "In addition to web3 social applications, MetaSo can also create many types of applications such as notes, netbooks, games and music."
+      },
+      "q2": {
+        "question": "What types of applications can MetaSo nodes be used for?",
+        "answer": "MetaSo nodes come with a built-in on-chain social application frontend similar to X.com. However, MetaSo nodes also include a rich set of built-in APIs, enabling developers to create a wide variety of applications, such as Instagram-like apps, Facebook-like apps, on-chain note-taking apps, on-chain music apps, and more. These applications can interoperate with data across all MetaSo nodes, collectively forming a large Web3 application network."
+      },
+      "q3": {
+        "question": "What is the distribution cycle and method for $METASO?",
+        "answer": "$METASO operates on a statistical cycle of 144 Bitcoin blocks, approximately 24 hours, with one calculation per cycle. In each cycle, the newly added MDV value of each node is considered its \"contribution value,\" and daily $METASO is distributed based on each node's contribution value. In the early stages of $METASO's launch, to ensure accurate distribution, a T+1 distribution method will be adopted. This means that after each statistical cycle ends, the corresponding $METASO distribution will be delayed by one day. $METASO will be distributed on the Bitcoin network in MRC20 format, and users are responsible for covering the associated miner fees for receiving $METASO."
+      },
+      "q4": {
+        "question": "What is the positioning of $METASO? How can ordinary users participate?",
+        "answer": "$METASO is positioned to incentivize MetaSo node operators. The MetaSo project aims to build a decentralized, global social media network, where the number and quality of nodes are key metrics. Thus, $METASO distribution is targeted at node operators. Currently, there is no direct participation method for ordinary users. As the MetaSo project team, we do not encourage or participate in any secondary circulation of $METASO. However, we will focus on developing more node tools to help MetaSo node operators more easily create and implement their own node-specific incentive mechanisms to attract users. In the future, possibilities may include: MetaSo node backends allowing configuration to redistribute $METASO to users based on contribution value; One-click MRC20 minting and airdrop tools for node operators; Or various incentive mechanisms independently designed by node operators. The design philosophy of $METASO is to incentivize node operators to attract more high-quality users who generate greater interaction value. The competition between nodes is essentially a competition for the number of these high-quality users. Therefore, we believe that in this competitive process, different nodes will gradually introduce diverse incentive measures to attract users to their nodes."
       }
     }
   },
@@ -130,7 +143,7 @@
       },
       "admin": {
         "title": "Access admin settings",
-        "description": "Access admin settings at http://[server-IP]:3000/dashboard/Login"
+        "description": "Access admin settings at http://[server-IP]:3000/dashboardLogin"
       },
       "api": {
         "title": "API documentation",
@@ -152,7 +165,7 @@
       },
       "admin": {
         "title": "Access admin settings",
-        "description": "Access admin settings at http://[server-IP]:3000/dashboard/Login"
+        "description": "Access admin settings at http://[server-IP]:3000/dashboardLogin"
       }
     },
     "buttons": {

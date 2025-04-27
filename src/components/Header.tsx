@@ -39,6 +39,14 @@ const Header: React.FC = () => {
           <span>{t('header.explore')}</span>
           <ChevronDown className="w-2.5" />
         </Link>
+        <a
+          href="https://docs.metaso.network"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#303133]"
+        >
+          {t('header.docs')}
+        </a>
       </nav>
       <div className="hidden md:flex items-center gap-4">
         <button
@@ -80,6 +88,14 @@ const Header: React.FC = () => {
             <span>{t('header.explore')}</span>
             <ChevronDown className="w-2.5" />
           </Link>
+          <a
+            href="https://docs.metaso.network"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#303133]"
+          >
+            {t('header.docs')}
+          </a>
           <button
             onClick={toggleLanguage}
             className="px-2 py-1 rounded border border-[#002E33] text-[#002E33] focus:outline-none active:outline-none hover:bg-[#002E33] hover:text-white transition-colors duration-200"
