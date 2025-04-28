@@ -1,4 +1,8 @@
 {
+  "common": {
+    "view_more": "查看更多",
+    "close": "关闭"
+  },
   "header": {
     "home": "首页",
     "intro": "介绍",
@@ -154,6 +158,18 @@
       "server": {
         "title": "服务器安装程序",
         "description": "在您的服务器上执行以下命令以启动安装程序："
+      },
+      "server_requirements": {
+        "title": "服务器机器配置（最低）",
+        "subtitle": "机器配置要求（最低）",
+        "processor": "处理器",
+        "cores": "2核",
+        "memory": "内存",
+        "ram": "4GB RAM",
+        "storage": "存储空间",
+        "space": "128GB可用空间",
+        "os": "操作系统",
+        "os_version": "Ubuntu 22.04 或更高版本"
       },
       "access": {
         "title": "访问安装程序",

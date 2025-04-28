@@ -37,7 +37,6 @@ const Header: React.FC = () => {
           className={`${getLinkClass("/explores")} flex items-center gap-x-1`}
         >
           <span>{t('header.explore')}</span>
-          <ChevronDown className="w-2.5" />
         </Link>
         <a
           href="https://docs.metaso.network"

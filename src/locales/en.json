@@ -1,4 +1,8 @@
 {
+  "common": {
+    "view_more": "View More",
+    "close": "Close"
+  },
   "header": {
     "home": "Home",
     "intro": "Intro",
@@ -154,6 +158,18 @@
       "server": {
         "title": "Server installer",
         "description": "Execute the following command on your server to start the installer:"
+      },
+      "server_requirements": {
+        "title": "Server machine configuration (minimum)",
+        "subtitle": "Machine configuration requirements (minimum)",
+        "processor": "Processor",
+        "cores": "2 cores",
+        "memory": "Memory",
+        "ram": "4GB RAM",
+        "storage": "Storage",
+        "space": "128GB available space",
+        "os": "OS",
+        "os_version": "22.04 or higher"
       },
       "access": {
         "title": "Access the installer",

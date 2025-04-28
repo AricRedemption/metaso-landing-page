@@ -136,6 +136,60 @@ const InstallPage: React.FC = () => {
         </div>
       </div>
 
+      {/* Server Requirements Section */}
+      <div className="w-full bg-[#6AB3F7]">
+        <div className="w-full max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <h2 className="text-3xl font-bold text-center text-[#001F23] mb-4">
+            {t("install.sections.server_requirements.title")}
+          </h2>
+          <p className="text-center text-[#001F23]/80 mb-8">
+            {t("install.sections.server_requirements.subtitle")}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-5xl mx-auto">
+            <div className="bg-[#E7F3FC] rounded-xl py-8 px-4 flex flex-col items-center text-center h-[160px]">
+              <div className="flex-grow flex flex-col items-center justify-center">
+                <h3 className="font-medium text-lg text-[#001F23]">
+                  {t("install.sections.server_requirements.cores")}
+                </h3>
+              </div>
+              <p className="text-sm text-[#001F23]/70 mt-auto">
+                {t("install.sections.server_requirements.processor")}
+              </p>
+            </div>
+            <div className="bg-[#E7F3FC] rounded-xl py-8 px-4 flex flex-col items-center text-center h-[160px]">
+              <div className="flex-grow flex flex-col items-center justify-center">
+                <h3 className="font-medium text-lg text-[#001F23]">
+                  {t("install.sections.server_requirements.ram")}
+                </h3>
+              </div>
+              <p className="text-sm text-[#001F23]/70 mt-auto">
+                {t("install.sections.server_requirements.memory")}
+              </p>
+            </div>
+            <div className="bg-[#E7F3FC] rounded-xl py-8 px-4 flex flex-col items-center text-center h-[160px]">
+              <div className="flex-grow flex flex-col items-center justify-center">
+                <h3 className="font-medium text-lg text-[#001F23]">
+                  {t("install.sections.server_requirements.space")}
+                </h3>
+              </div>
+              <p className="text-sm text-[#001F23]/70 mt-auto">
+                {t("install.sections.server_requirements.storage")}
+              </p>
+            </div>
+            <div className="bg-[#E7F3FC] rounded-xl py-8 px-4 flex flex-col items-center text-center h-[160px]">
+              <div className="flex-grow flex flex-col items-center justify-center">
+                <h3 className="font-medium text-lg text-[#001F23]">
+                  {t("install.sections.server_requirements.os_version")}
+                </h3>
+              </div>
+              <p className="text-sm text-[#001F23]/70 mt-auto">
+                {t("install.sections.server_requirements.os")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Access Installer Section */}
       <div className="w-full bg-[#93CBFF]">
         <div className="w-full max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 py-20">
