@@ -169,7 +169,7 @@
         "storage": "Storage",
         "space": "128GB available space",
         "os": "OS",
-        "os_version": "22.04 or higher"
+        "os_version": "Ubuntu 22.04 or higher"
       },
       "access": {
         "title": "Access the installer",
