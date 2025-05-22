@@ -34,7 +34,7 @@ const AnimatedNumber: React.FC<{ value: number | string | undefined }> = ({ valu
   }, [value]);
 
   return (
-    <h1 className="text-2xl sm:text-3xl xl:text-5xl font-bold text-[#002E33]">
+    <h1 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-[#002E33]">
       {typeof displayValue === 'number' ? displayValue.toLocaleString() : displayValue}
     </h1>
   );
